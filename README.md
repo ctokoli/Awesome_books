@@ -133,6 +133,12 @@ You can deploy this project using: GitHub Pages,
 - Twitter: [@Ctokoli](https://twitter.com/ctokoli)
 - LinkedIn: [Cephas Tokoli](https://www.linkedin.com/in/cephas-tokoli-a25204123/)
 
+👤 **Malik Muhammad Haider Khan**
+
+- GitHub: [@malikhaiderkhan](https://github.com/malikhaiderkhan)
+- Twitter: [@malikhaiderkha](https://twitter.com/malikhaiderkha)
+- LinkedIn: [@malikhaiderkhan](https://www.linkedin.com/in/malik-haider-khan-b53188140)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>
