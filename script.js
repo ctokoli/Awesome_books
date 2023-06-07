@@ -3,12 +3,20 @@ const title = document.querySelector('.title');
 const author = document.querySelector('.author');
 const content = document.querySelector('.books');
 
-const userData = JSON.parse(localStorage.getItem('formdata')).reverse();
-let count = userData.length;
+let userData = JSON.parse(localStorage.getItem('formdata'));
+let count = 0;
+if(userData != undefined){
+  userData.reverse();
+  count = userData.length;
+}else{
+  userData = [];
+  localStorage.setItem('formdata', JSON.stringify(userData));
+}
+ 
 
 /* eslint no-unused-vars: "off" */
-function deleteItem(author) {
-  const filteredArray = userData.filter((e) => e.author !== author);
+function deleteItem(id) {
+  const filteredArray = userData.filter((e) => e.id != id);
   localStorage.setItem('formdata', JSON.stringify(filteredArray));
 }
 
@@ -20,7 +28,7 @@ function fetchBooks() {
                     <h3>${book.title}</h3>
                     <p>${book.author}</p>
                 </div>
-                <button onclick="deleteItem('${book.author}')">Remove</button>
+                <button onclick="deleteItem('${book.id}')">Remove</button>
                 <hr>
             `;
   });
