@@ -16,6 +16,7 @@ if(userData != undefined){
 
 /* eslint no-unused-vars: "off" */
 function deleteItem(id) {
+  //console.log(id);
   const filteredArray = userData.filter((e) => e.id != id);
   localStorage.setItem('formdata', JSON.stringify(filteredArray));
 }
