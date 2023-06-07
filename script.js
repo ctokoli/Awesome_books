@@ -5,18 +5,17 @@ const content = document.querySelector('.books');
 
 let userData = JSON.parse(localStorage.getItem('formdata'));
 let count = 0;
-if(userData != undefined){
+if (userData != undefined) {
   userData.reverse();
   count = userData.length;
-}else{
+} else {
   userData = [];
   localStorage.setItem('formdata', JSON.stringify(userData));
 }
- 
 
-/* eslint no-unused-vars: "off" */
+/* eslint no-unused-vars: "off" */ /* eslint eqeqeq: "off" */
 function deleteItem(id) {
-  //console.log(id);
+  // console.log(id);
   const filteredArray = userData.filter((e) => e.id != id);
   localStorage.setItem('formdata', JSON.stringify(filteredArray));
 }
