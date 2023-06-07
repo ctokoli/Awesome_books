@@ -7,10 +7,7 @@ const userData = JSON.parse(localStorage.getItem('formdata')).reverse();
 let count = userData.length;
 
 /* eslint no-unused-vars: "off" */
-function deleteItem(author) {
-  const filteredArray = userData.filter((e) => e.author !== author);
-  localStorage.setItem('formdata', JSON.stringify(filteredArray));
-}
+
 
 function fetchBooks() {
   let placeholder = '';
