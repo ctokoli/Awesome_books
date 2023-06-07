@@ -125,7 +125,7 @@ You can deploy this project using: GitHub Pages,
 #
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 👤 Author <a name="author"></a>
+## 👤 Authors <a name="author"></a>
 
 👤 **Cephas, Tokoli**
 
