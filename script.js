@@ -26,11 +26,10 @@ function fetchBooks() {
   let placeholder = '';
   userData.forEach((book) => {
     placeholder += `
-                <div>
-                    <h3>${book.title}</h3>
-                    <p>${book.author}</p>
-                </div>
+                <div class="item">                 
+                <p>"${book.title}" by ${book.author}</p>
                 <button onclick="deleteItem('${book.id}')">Remove</button>
+                </div> 
                 <hr>
             `;
   });

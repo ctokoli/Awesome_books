@@ -1,3 +1,51 @@
 body {
   margin: 0;
+  font-family: "Roboto", sans-serif;
+  background: #5454b2;
+}
+
+
+main {
+  width: 50%;
+  height: 100vh;
+  background: white;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav ul {
+  display: flex;
+}
+
+.nav ul li{
+  list-style-type: none;
+  padding: 0 25px;
+  border-right: 1px solid;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: #5454b2;
+  font-weight: 500;
+}
+
+.nav ul li:nth-child(3){
+  border: none;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  width: 82px;
+  height: 30px;
 }
