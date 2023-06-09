@@ -4,7 +4,6 @@ body {
   background: #5454b2;
 }
 
-
 .container {
   width: 50%;
   background: white;
@@ -20,7 +19,7 @@ body {
   margin-bottom: 53px;
 }
 
-.nav h4{
+.nav h4 {
   margin: 0;
 }
 
@@ -29,7 +28,7 @@ body {
   margin: 5px;
 }
 
-.nav ul li{
+.nav ul li {
   list-style-type: none;
   padding: 0 25px;
   border-right: 1px solid;
@@ -41,10 +40,13 @@ body {
   font-weight: 500;
 }
 
-.nav ul li:nth-child(3){
-  border: none;
+.contact ul li {
+  padding-bottom: 5px;
 }
 
+.nav ul li:nth-child(3) {
+  border: none;
+}
 
 .item {
   display: flex;
@@ -57,19 +59,19 @@ button {
   height: 30px;
 }
 
-.hide{
+.hide {
   display: none;
 }
 
-.add .show{
+.add .show {
   display: block;
 }
 
-div.form-item.show{
+div.form-item.show {
   display: block;
 }
 
-.form-item{
+.form-item {
   display: none;
 }
 
@@ -77,15 +79,11 @@ div.form-item.show{
   display: none;
 }
 
-.contact h2{
+.contact h2 {
   margin: 10px 0 0 0;
 }
 
-.contact ul li {
-  padding-bottom: 5px;
-}
-
-header h1{
+header h1 {
   margin: 0;
   padding-left: 9px;
 }
@@ -156,7 +154,7 @@ footer p {
   padding: 7px 0;
 }
 
-div.contact-cont.show{
+div.contact-cont.show {
   display: flex;
   flex-direction: column;
   align-items: center;
