@@ -12,6 +12,8 @@ class BookManager {
     this.form = document.querySelector('.form-item');
     this.add = document.querySelector('.add');
     this.list = document.querySelector('.list');
+    this.contactContent = document.querySelector('.contact-cont');
+    this.contact = document.querySelector('.contact');
     this.userData = JSON.parse(localStorage.getItem('formdata')) || [];
     this.count = this.userData.length;
     this.fetchBooks();
@@ -37,13 +39,16 @@ class BookManager {
 
     this.add.addEventListener('click', () => {
       this.mainContent.classList.add('hide');
+      this.contactContent.classList.remove('show');
       this.form.classList.add('show');
     });
 
     this.list.addEventListener('click', () => {
       this.form.classList.remove('show');
       this.mainContent.classList.remove('hide');
+      this.contactContent.classList.remove('show');
     });
+
   }
 
   deleteItem(id) {

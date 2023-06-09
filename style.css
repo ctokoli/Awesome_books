@@ -73,10 +73,8 @@ div.form-item.show{
   display: none;
 }
 
-.contact {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.contact-cont {
+  display: none;
 }
 
 .contact h2{
@@ -148,6 +146,7 @@ button.button.remove-btn {
 }
 
 footer {
+  margin-top: 50px;
   border: 1px solid black;
   padding-left: 10px;
 }
@@ -155,4 +154,10 @@ footer {
 footer p {
   margin: 0;
   padding: 7px 0;
+}
+
+div.contact-cont.show{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
