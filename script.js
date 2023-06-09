@@ -1,10 +1,6 @@
-class Book {
-  constructor(id, title, author) {
-    this.id = id;
-    this.title = title;
-    this.author = author;
-  }
-}
+import Book from './book.js';
+
+// const Book = require("book.js");
 
 class BookManager {
   constructor() {
@@ -24,13 +20,13 @@ class BookManager {
       const formData = new Book(this.count + 1, this.title.value, this.author.value);
       this.userData.push(formData);
       localStorage.setItem('formdata', JSON.stringify(this.userData));
-      this.count++;
+      this.count += 1;
       this.renderBooks();
     });
 
     this.content.addEventListener('click', (e) => {
       if (e.target.classList.contains('remove-btn')) {
-        const id = parseInt(e.target.dataset.id);
+        const id = parseInt(e.target.dataset.id, 10);
         this.deleteItem(id);
       }
     });
@@ -45,7 +41,7 @@ class BookManager {
   renderBooks() {
     let placeholder = '';
     this.userData.forEach((book, index) => {
-      const backgroundColor = index % 2 === 0 ? 'white' : 'grey';
+      const backgroundColor = index % 2 === 0 ? 'white' : '#d2d2d2';
       placeholder += `
        <div class="book-item" style="background-color: ${backgroundColor};">
         <div class="book" >
@@ -63,5 +59,5 @@ class BookManager {
     this.renderBooks();
   }
 }
-
+// eslint-disable-next-line no-unused-vars
 const bookManager = new BookManager();
