@@ -1,9 +1,11 @@
 {
+  
   "connector": {
     "name": "local",
     "options": {
       "pattern": ["**", "!.git/**", "!node_modules/**"]
     }
+
   },
   "extends": ["development"],
   "formatters": ["stylish"],
@@ -15,4 +17,5 @@
     "meta-viewport",
     "no-inline-styles:error"
   ]
+
 }

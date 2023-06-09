@@ -1,7 +1,5 @@
 import Book from './book.js';
 
-// const Book = require("book.js");
-
 class BookManager {
   constructor() {
     this.button = document.querySelector('button');
