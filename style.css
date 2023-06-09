@@ -7,7 +7,6 @@ body {
 
 main {
   width: 50%;
-  height: 100vh;
   background: white;
   padding: 20px;
   margin: 0 auto;
@@ -17,10 +16,17 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid dimgray;
+  margin-bottom: 53px;
+}
+
+.nav h4{
+  margin: 0;
 }
 
 .nav ul {
   display: flex;
+  margin: 5px;
 }
 
 .nav ul li{
@@ -39,6 +45,7 @@ main {
   border: none;
 }
 
+
 .item {
   display: flex;
   justify-content: space-between;
@@ -48,4 +55,20 @@ main {
 button {
   width: 82px;
   height: 30px;
+}
+
+.hide{
+  display: none;
+}
+
+.add .show{
+  display: block;
+}
+
+div.form-item.show{
+  display: block;
+}
+
+.form-item{
+  display: none;
 }

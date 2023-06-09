@@ -2,7 +2,11 @@ const button = document.querySelector('button');
 const title = document.querySelector('.title');
 const author = document.querySelector('.author');
 const content = document.querySelector('.books');
-
+const list = document.querySelector('.list');
+const add = document.querySelector('.add');
+const contact = document.querySelector('.contact');
+const books = document.querySelector('.books');
+const form = document.querySelector('.form-item');
 
 
 let userData = JSON.parse(localStorage.getItem('formdata'));
@@ -50,3 +54,8 @@ function fetchBooks() {
 }
 
 fetchBooks();
+
+add.addEventListener('click', () => {
+  books.classList.add('hide');
+  form.classList.add('show');
+});
