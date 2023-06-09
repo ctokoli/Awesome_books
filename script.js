@@ -48,6 +48,12 @@ class BookManager {
       this.mainContent.classList.remove('hide');
       this.contactContent.classList.remove('show');
     });
+    
+    this.contact.addEventListener('click', () => {
+      this.form.classList.remove('show');
+      this.mainContent.classList.add('hide');
+      this.contactContent.classList.add('show');
+    });
 
   }
 
