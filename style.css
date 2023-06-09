@@ -21,19 +21,19 @@ body {
   border: 1px solid black;
 }
 
-.form{
+.form {
   text-align: center;
 }
 
-header{
+header {
   text-align: center;
 }
 
-h3{
-  margin: 0px;
+h3 {
+  margin: 0;
 }
 
-.book-item{
+.book-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
