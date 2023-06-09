@@ -4,17 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Awesome books</title>
 </head>
-<body>
-    <header><h1>Awesome books</h1></header>
+<body> 
     <main>
-        <div class="books"></div>
-        <form method="post"  class="form" >
-            <input type="text" class="title"  name="title" placeholder="book title" /><br><br>
-            <input type="text" class="author" name="author" placeholder="author"/><br><br>
-            <button type="submit" class="button">Add</button>
-        </form>
+        <nav class="nav">
+            <h4>Awesome books</h4>
+            <ul>
+                <li><a href="#" class="list">List</a></li>
+                <li><a href="#" class="add">Add New</a></li>
+                <li><a href="#" class="contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="background">
+            <div class="books"></div>
+        <div class="form-item">
+            <form method="post"  class="form" >
+                <input type="text" class="title"  name="title" placeholder="book title" /><br><br>
+                <input type="text" class="author" name="author" placeholder="author"/><br><br>
+                <button type="submit" class="button">Add</button>
+            </form>
+        </div>
+        </div>
     </main>
     <script type="text/javascript" src="script.js" ></script>  
 </body>

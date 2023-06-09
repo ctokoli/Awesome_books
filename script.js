@@ -2,6 +2,12 @@ const button = document.querySelector('button');
 const title = document.querySelector('.title');
 const author = document.querySelector('.author');
 const content = document.querySelector('.books');
+const list = document.querySelector('.list');
+const add = document.querySelector('.add');
+const contact = document.querySelector('.contact');
+const books = document.querySelector('.books');
+const form = document.querySelector('.form-item');
+
 
 let userData = JSON.parse(localStorage.getItem('formdata'));
 let count = 0;
@@ -24,11 +30,10 @@ function fetchBooks() {
   let placeholder = '';
   userData.forEach((book) => {
     placeholder += `
-                <div>
-                    <h3>${book.title}</h3>
-                    <p>${book.author}</p>
-                </div>
+                <div class="item">                 
+                <p>"${book.title}" by ${book.author}</p>
                 <button onclick="deleteItem('${book.id}')">Remove</button>
+                </div> 
                 <hr>
             `;
   });
@@ -49,3 +54,8 @@ function fetchBooks() {
 }
 
 fetchBooks();
+
+add.addEventListener('click', () => {
+  books.classList.add('hide');
+  form.classList.add('show');
+});
