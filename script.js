@@ -59,5 +59,7 @@ class BookManager {
     this.renderBooks();
   }
 }
-// eslint-disable-next-line no-unused-vars
+
 const bookManager = new BookManager();
+
+bookManager();
