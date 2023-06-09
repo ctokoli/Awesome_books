@@ -8,6 +8,10 @@ class BookManager {
     this.title = document.querySelector('.title');
     this.author = document.querySelector('.author');
     this.content = document.querySelector('.books');
+    this.mainContent = document.querySelector('.main-content');
+    this.form = document.querySelector('.form-item');
+    this.add = document.querySelector('.add');
+    this.list = document.querySelector('.list');
     this.userData = JSON.parse(localStorage.getItem('formdata')) || [];
     this.count = this.userData.length;
     this.fetchBooks();
@@ -29,6 +33,16 @@ class BookManager {
         const id = parseInt(e.target.dataset.id, 10);
         this.deleteItem(id);
       }
+    });
+
+    this.add.addEventListener('click', () => {
+      this.mainContent.classList.add('hide');
+      this.form.classList.add('show');
+    });
+
+    this.list.addEventListener('click', () => {
+      this.form.classList.remove('show');
+      this.mainContent.classList.remove('hide');
     });
   }
 
@@ -58,6 +72,8 @@ class BookManager {
   fetchBooks() {
     this.renderBooks();
   }
+
+
 }
 
 const bookManager = new BookManager();
