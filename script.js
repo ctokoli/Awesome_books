@@ -1,51 +1,65 @@
-const button = document.querySelector('button');
-const title = document.querySelector('.title');
-const author = document.querySelector('.author');
-const content = document.querySelector('.books');
+import Book from './book.js';
 
-let userData = JSON.parse(localStorage.getItem('formdata'));
-let count = 0;
-if (userData != undefined) {
-  userData.reverse();
-  count = userData.length;
-} else {
-  userData = [];
-  localStorage.setItem('formdata', JSON.stringify(userData));
+// const Book = require("book.js");
+
+class BookManager {
+  constructor() {
+    this.button = document.querySelector('button');
+    this.title = document.querySelector('.title');
+    this.author = document.querySelector('.author');
+    this.content = document.querySelector('.books');
+    this.userData = JSON.parse(localStorage.getItem('formdata')) || [];
+    this.count = this.userData.length;
+    this.fetchBooks();
+    this.setupEventListeners();
+  }
+
+  setupEventListeners() {
+    this.button.addEventListener('click', (e) => {
+      e.preventDefault();
+      const formData = new Book(this.count + 1, this.title.value, this.author.value);
+      this.userData.push(formData);
+      localStorage.setItem('formdata', JSON.stringify(this.userData));
+      this.count += 1;
+      this.renderBooks();
+    });
+
+    this.content.addEventListener('click', (e) => {
+      if (e.target.classList.contains('remove-btn')) {
+        const id = parseInt(e.target.dataset.id, 10);
+        this.deleteItem(id);
+      }
+    });
+  }
+
+  deleteItem(id) {
+    this.userData = this.userData.filter((book) => book.id !== id);
+    localStorage.setItem('formdata', JSON.stringify(this.userData));
+    this.renderBooks();
+  }
+
+  renderBooks() {
+    let placeholder = '';
+    this.userData.forEach((book, index) => {
+      const backgroundColor = index % 2 === 0 ? 'white' : '#d2d2d2';
+      placeholder += `
+       <div class="book-item" style="background-color: ${backgroundColor};">
+        <div class="book" >
+        <h3>"${book.title}" by ${book.author}</h3>
+        </div>
+        <button class="remove-btn" data-id="${book.id}">Remove</button>
+       </div>
+  
+      `;
+    });
+    this.content.innerHTML = placeholder;
+  }
+
+  fetchBooks() {
+    this.renderBooks();
+  }
 }
 
-/* eslint no-unused-vars: "off" */ /* eslint eqeqeq: "off" */
-function deleteItem(id) {
-  // console.log(id);
-  const filteredArray = userData.filter((e) => e.id != id);
-  localStorage.setItem('formdata', JSON.stringify(filteredArray));
-}
+const bookManager = new BookManager();
 
-function fetchBooks() {
-  let placeholder = '';
-  userData.forEach((book) => {
-    placeholder += `
-                <div>
-                    <h3>${book.title}</h3>
-                    <p>${book.author}</p>
-                </div>
-                <button onclick="deleteItem('${book.id}')">Remove</button>
-                <hr>
-            `;
-  });
-  content.innerHTML = placeholder;
-
-  button.addEventListener('click', (e) => {
-    e.preventDefault();
-    const formData = {
-      id: count += 1,
-      title: title.value,
-      author: author.value,
-    };
-    // console.log(userData);
-    userData.push(formData);
-    // console.log(userData);
-    localStorage.setItem('formdata', JSON.stringify(userData));
-  });
-}
-
-fetchBooks();
+bookManager();
