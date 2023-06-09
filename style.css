@@ -3,8 +3,7 @@ body {
 }
 
 .book {
-  border: 2px solid black;
-  padding: 10px;
+  padding: 7px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,4 +11,41 @@ body {
 
 .remove-btn {
   margin-left: 10px;
+  width: 80px;
+  height: 30px;
+}
+
+.books {
+  width: 50%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.form{
+  text-align: center;
+}
+
+header{
+  text-align: center;
+}
+
+h3{
+  margin: 0px;
+}
+
+.book-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+input {
+  width: 210px;
+  height: 23px;
+}
+
+button.button.remove-btn {
+  position: relative;
+  left: 61px;
 }
