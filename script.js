@@ -1,4 +1,5 @@
 import Book from './book.js';
+import { DateTime } from "./luxon.js";
 
 class BookManager {
   constructor() {
@@ -14,10 +15,12 @@ class BookManager {
     this.contact = document.querySelector('.contact');
     this.userData = JSON.parse(localStorage.getItem('formdata')) || [];
     this.count = this.userData.length;
+    this.dateNow = DateTime.now().toString();
     this.fetchBooks();
     this.setupEventListeners();
   }
 
+  
   setupEventListeners() {
     this.button.addEventListener('click', (e) => {
       e.preventDefault();
@@ -26,6 +29,7 @@ class BookManager {
       localStorage.setItem('formdata', JSON.stringify(this.userData));
       this.count += 1;
       this.renderBooks();
+      
     });
 
     this.content.addEventListener('click', (e) => {
@@ -61,6 +65,8 @@ class BookManager {
   }
 
   renderBooks() {
+    let time = DateTime.now().toFormat("MMMM dd yyyy, hh:mma");
+    console.log(time);
     let placeholder = '';
     this.userData.forEach((book, index) => {
       const backgroundColor = index % 2 === 0 ? 'white' : '#d2d2d2';
@@ -84,4 +90,3 @@ class BookManager {
 
 const bookManager = new BookManager();
 
-bookManager();

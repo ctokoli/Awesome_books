@@ -156,3 +156,8 @@ div.contact-cont.show {
   flex-direction: column;
   align-items: center;
 }
+
+.time {
+  display: flex;
+  justify-content: end;
+}
